@@ -1,0 +1,95 @@
+const validator = {
+  isValid: (cardNumber) => {
+    //manipular el numero de la tarjeta de credito y procesarlo con las validaciones requeridas
+    //declarar una variable con el resultado en un arreglo
+    const result = []
+    //recibir la tarjeta de credito y recorrer (iterar con un ciclo 'for') todos los caracteres recibidos
+    for (let i = 0; i < cardNumber.length; i++) {
+      // ver si la posición del indice es par con if ternario, guardarlo en la variable isEven
+      const isEven = i % 2 === 0 ? true : false
+      if (isEven) {
+        //si la posicion i es par, doblar el número de la tarjeta en esa posicion 
+        // guardamos en la variable doubledNumber  
+        const doubledNumber = Number.parseInt(cardNumber[i]) * 2
+        if (doubledNumber >= 10) {
+          //si el numero doblado es mayor o igual que 10, entonces sumar sus digitos.
+          //para sumar sus digitos hay que convertir la variable tipo number en string
+          //y convertir este string en un arreglo donde sus elementos son de tipo number.
+          //iterar este arreglo sumando los valores de cada posicion guardandolos en una variable
+          //(acumulatedSum)
+          const doubledNumberAsString = String(doubledNumber);
+          const digits = Array.from(doubledNumberAsString, Number);
+          let acumulatedSum = 0;
+          for (let i = 0; i < digits.length; i++) {
+            acumulatedSum += digits[i]
+
+          }
+          result.push(acumulatedSum) //
+
+        } else {
+          result.push(doubledNumber)
+        }
+
+      } else {
+        //en el caso que la posicion sea impar, entonces el numero no se modifica
+        result.push(cardNumber[i])
+      }
+    }
+    return result
+  },
+
+  maskify: (cardNumber) => {
+
+    // return maskify.replace(/.(?=.{4})/g, "#");
+
+
+
+  }
+}
+export default validator;
+
+
+
+
+const validator = {
+  isValid: (cardNumber) => {
+    //manipular el numero de la tarjeta de credito y procesarlo con las validaciones requeridas
+    //
+    const cardAsArray = Array.from(cardNumber, Number).reverse();
+    const result = [];
+
+    //recibir la tarjeta de credito y recorrer (iterar con un ciclo 'for') todos los caracteres recibidos
+    //let sum= 0;
+    //let resultInverted = result.reverse();
+    //const digits = Array.from(cardNumber,Number)
+    for (let position = 0; position < cardAsArray.length; position++) {
+      if (position % 2 === 0) {
+        //si la posicion position es par, doblar el número de la tarjeta en esa posicion
+        // guardamos en la variable doubledNumber
+        const doubledNumber = (cardAsArray[position] + 1) * 2;
+        if (doubledNumber > 9) {
+          result.push(doubledNumber - 10);
+        } else {
+          result.push(doubledNumber);
+        }
+      } else {
+        result.push(cardAsArray[position] + 1);
+      }
+    }
+    let totalSum = 0;
+    for (let position = 0; position < result.length; position++) {
+      totalSum = totalSum + result[position];
+    }
+    console.log({ cardAsArray, totalSum, result });
+    if (totalSum % 10 === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  maskify: (cardNumber) => {
+    // return cardNumber.slice(0, -4).replace(/./g, "#") + cc.slice(-4);
+  },
+};
+export default validator;
