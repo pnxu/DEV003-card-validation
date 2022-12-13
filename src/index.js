@@ -2,41 +2,35 @@ import validator from "./validator.js";
 
 // DOM elements
 const submitButton = document.getElementById("submit-button");
-const creditCardInput = document.getElementById("card-number");
-// const maskNumbers = document.getElementById("mask").innerHTML;
-// const customerNameInput = document.getElementById('customer-name');
-// const validarForm = document.getElementById('checkout-form')
+const creditCard = document.getElementById("card-number");
+const numbersBox = document.getElementById("mask");
 
-// function validarForm() {
-//   if (costumerNameInput.value.length > 0) {
-//     submitButton.disabled = false;
-//   } else {
-//     submitButton.disabled = true;
-//   }
-// }
-
-creditCardInput.addEventListener("keydown", () => {
-  const inputText = creditCardInput.value;
-  // if (inputText === 16) {
-  //   submitButton.disabled = false;
-  // } else {
-  //   submitButton.disabled = true;
-  // }
-  // console.log(inputText);
+creditCard.addEventListener("keydown", () => {
+  const maskedNumbers = validator.maskify(creditCard.value);
+  numbersBox.innerHTML = maskedNumbers;
 });
 
-// Form validation listener
-// Validates with luhn algorithm
-submitButton.addEventListener("click", () => {
-  const creditCardNumber = creditCardInput.value;
-  const validatorResponse = validator.isValid(creditCardNumber);
-  // alert(validatorResponse);
-  if (validatorResponse === true) {
-    window.location.href = "./success.html";
-  } else {
-    alert("Ingrese un número de tarjeta válido");
-  }
-});
+submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const customerName = document.getElementById("customer-name").value;
+  const cvv = document.getElementById("cvv").value;
+  const month = Number.parseInt(
+    document.getElementById("expiration-month").value
+  );
+  const year = Number.parseInt(
+    document.getElementById("expiration-year").value
+  );
+  if (creditCard.value.length !== 16) return alert("Ingresa 16 caracteres");
+  if (customerName.length === 0) return alert("Nombre de cliente inválido");
+  if (month < 0 && month > 13) return alert("Mes invalido");
+  if (year < 2020 && year > 2040) return alert("Año invalido");
+  if (cvv.length !== 3) return alert("cvv invalido");
 
-// This function listen the event "keydown" on the creditCardInput
-// Then it checks if the input is number
+  const validatorResponse = validator.isValid(creditCard.value);
+  if (!validatorResponse) return alert("Tarjeta de credito inválida");
+  // console.log({ validatorResponse, creditCard, customerName, year, month });
+  setTimeout(function () {
+    window.location = "./success.html";
+  }, 2000);
+  alert("Datos guardados exitosamente, redirigiendo...");
+});
