@@ -1,71 +1,105 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>My Wishlist</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="logo">logo</div>
-       <nav>
-        <ul class="nav_list">
-          <li class="nav_links"><a href="index.html">My Wishlist</a></li>
-          <li class="nav_links"><a href="cart.html">Carrito</a></li>
-          <li class="nav_links"><a href="info.html">Información</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
 
-      <div class="bar_box">
-      <ul class="bar_list">
-        <li class="bar_names">Producto</li>
-        <li class="bar_names">Precio</li>
+<head>
+  <meta charset="utf-8">
+  <title>My Wishlist</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">logo</div>
+    <nav>
+      <ul class="nav_list">
+        <li class="nav_links"><a href="index.html">My Wishlist</a></li>
+        <li class="nav_links"><a href="cart.html">Carrito</a></li>
+        <li class="nav_links"><a href="info.html">Información</a></li>
       </ul>
-    </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="wishlist-container">
+        <div class="bar-row">
+          <label>Producto</label>
+          <label>Precio</label>
+        </div>
 
-    <div class="products">
-      <div>
-        <input type="checkbox">
-        <img src="images/img1.jpg" id="img1">
-        <ul>
-          <li class="description">Mocasines ZARA</li>
-          <li class="description">$29.990</li>
-        </ul>
+        <div class="shop-item" id="item1">
+          <img class="item-thumbnail" src="../images/img1.jpg" id="img1" />
+          <ul class="item-description">
+            <li>Mocasines talla 37</li><br>
+            <li>$29.990</li>
+          </ul>
+          <button type="button" class="btn shop-item-button">Añadir al carrito</button>
+        </div>
+
+        <div class="shop-item" id="item2">
+          <img class="item-thumbnail" src="../images/img2.jpg" id="img2" />
+          <ul class="item-description">
+            <li>Set 10 Lapices</li><br>
+            <li>$9.990</li>
+          </ul>
+          <button type="button" class="btn shop-item-button">Añadir al carrito</button>
+        </div>
+
+        <div class="shop-item" id="item3">
+          <img class="item-thumbnail" src="../images/img3.jpg" id="img3" />
+          <ul class="item-description">
+            <li>Cama para gato</li>
+            <li>$8.990</li>
+          </ul>
+          <button type="button" class="btn shop-item-button">Añadir al carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="cart-container">
+      <h2 class="cart-header">Carrito</h2>
+      <div class="cart-row">
+        <span class="cart-item cart-header cart-column">Producto</span>
+        <span class="cart-price cart-header cart-column">Precio</span>
+        <span class="cart-quantity cart-header cart-column">Cantidad</span>
       </div>
 
-      <div>
-        <input type="checkbox">
-        <img src="images/img2.jpg" id="img2">
-        <ul>
-          <li class="description">Snack para Gatos INABA Churu Atún Variedades - 50 Tubos</li>
-          <li class="description">$32.990</li>
-        </ul>
+      <div class="cart-items">
+        <div class="cart-row">
+          <div class="cart-item cart-column">
+            <img src="../images/img1.jpg" class="cart-thumbnail" width="100" height="100">
+            <span class="cart-item-name cart-column">ZAPATOS</span>
+          </div>
+          <span class="cart-price cart-column">$10.990</span>
+          <div class="cart-quantify cart-column">
+            <input type="number" class="cart-quantify-input" value="1">
+            <button type="button" class="btn btn-danger">Borrar</button>
+          </div>
+        </div>
+        <div class="cart-row">
+          <div class="cart-item cart-column">
+            <img src="../images/img1.jpg" class="cart-thumbnail" width="100" height="100">
+            <span class="cart-item-name cart-column">ZAPATOS</span>
+          </div>
+          <span class="cart-price cart-column">$10.990</span>
+          <div class="cart-quantify cart-column">
+            <input type="number" class="cart-quantify-input" value="1">
+            <button type="button" class="btn btn-danger">Borrar</button>
+          </div>
+        </div>
+
       </div>
-
-      <div>
-        <input type="checkbox">
-        <img src="images/img3.jpg" id="img3">
-        <ul>
-          <li class="description">Set 10 Lapices</li>
-          <li class="description">$8.990</li>
-        </ul>
+      <div class="cart-total">
+        <strong class="cart-total-result">Total:</strong>
+        <span class="cart-total-price">0202</span>
       </div>
-      <a  class="conect" href="cart.html">Pagar</a>
+      <!-- <button type="button" class="btn btn-purchase">Pagar</button> -->
+      <a class="btn" href="checkout.html">Pagar</a>
+    </aside>
 
-      </div>
+  </main>
+  <footer>
+    <p>©Copyright. Todos los derechos reservados.</p>
+  </footer>
+  <script src="index.js" type="module"></script>
+</body>
 
-
-
-
-
-
-
-    </div>
- 
-    </main>
-    <footer><p>©Copyright. Todos los derechos reservados.</p></footer>
-    <script src="index.js" type="module"></script>
-  </body>
 </html>
