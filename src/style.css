@@ -116,7 +116,13 @@ h3 {
   margin-left: 50px;
 }
 
+.cart-total-container {
+  justify-content: center;
+  text-align: center;
+}
+
 .cart-button-container {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }
