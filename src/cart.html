@@ -5,13 +5,12 @@
     <title>Carrito de compras</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <header>
       <div class="logo">logo</div>
       <nav>
         <ul class="nav_list">
-          <li class="nav_links"><a href="index.html">My Wishlist</a></li>
+          <li class="nav_links"><a href="index.html">Mi Wishlist</a></li>
           <li class="nav_links"><a href="cart.html">Carrito</a></li>
           <li class="nav_links"><a href="info.html">Información</a></li>
         </ul>
@@ -19,61 +18,27 @@
     </header>
     <main>
       <div class="wishlist-container">
-        <h3 class="cart-header">Carrito</h3>
-        <div class="cart-row">
-          <span class="cart-item cart-header cart-column">Producto</span>
-          <span class="cart-price cart-header cart-column">Precio</span>
-          <span class="cart-quantity cart-header cart-column">Cantidad</span>
-        </div>
-
+        <h3 class="cart-header">Carrito de deseos</h3>
         <div class="cart-items">
-          <div class="cart-row">
-            <div class="cart-item cart-column">
-              <img
-                src="../images/img3.jpg"
-                class="cart-thumbnail"
-                width="100"
-                height="100"
-              />
-              <span class="cart-item-name cart-column">Cama para gato</span>
-            </div>
-            <span class="cart-price cart-column">$8.990</span>
-            <div class="cart-quantify cart-column">
-              <input type="number" class="cart-quantify-input" value="1" />
-              <button type="button" class="btn btn-danger">Borrar</button>
-            </div>
-          </div>
-          <div class="cart-row">
-            <div class="cart-item cart-column">
-              <img
-                src="../images/img1.jpg"
-                class="cart-thumbnail"
-                width="100"
-                height="100"
-              />
-              <span class="cart-item-name cart-column">ZAPATOS</span>
-            </div>
-            <span class="cart-price cart-column">$10.990</span>
-            <div class="cart-quantify cart-column">
-              <input type="number" class="cart-quantify-input" value="1" />
-              <button type="button" class="btn btn-danger">Borrar</button>
-            </div>
-          </div>
+          <img
+            src="../images/img3.jpg"
+            class="cart-thumbnail"
+            width="100"
+            height="100"
+          />
         </div>
-        <div class="cart-total">
-          <strong class="cart-total-result">Total:</strong>
-          <span class="cart-total-price">0202</span>
-        </div>
-        <!-- <button type="button" class="btn btn-purchase">Pagar</button> -->
-        <div class="button-container">
+        <ul class="item-description">
+          <li>Cama para gato</li>
+          <br />
+          <li>$8.990</li>
+        </ul>
+        <strong>Total:</strong>
+        <span>$8.990</span>
+        <div class="cart-button-container">
           <a class="fake-btn" href="checkout.html">Pagar</a>
         </div>
       </div>
     </main>
-    <footer>
-      <p>©Realizado por Francisca Vega DEV003</p>
-    </footer>
-    <script src="index.js" type="module"></script>
     <script src="index.js" type="module"></script>
   </body>
 </html>
