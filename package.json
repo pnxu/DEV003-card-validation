@@ -1,7 +1,7 @@
 {
   "name": "card-validation",
   "version": "1.0.0",
-  "main": "src/views/index.html",
+  "main": "src/index.html",
   "license": "MIT",
   "homepage": "https://pnxu.github.io/DEV003-card-validation/src", 
   "scripts": {
