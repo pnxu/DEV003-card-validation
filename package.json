@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "src/views/index.html",
   "license": "MIT",
+  "homepage": "https://pnxu.github.io/DEV003-card-validation", 
   "scripts": {
-    "homepage": "https://pnxu.github.io/DEV003-card-validation",
     "htmlhint": "htmlhint src/*.html test/*.html",
     "eslint": "eslint --ext .js src/ test/",
     "pretest": "npm run eslint && npm run htmlhint",
