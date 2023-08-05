@@ -1,4 +1,4 @@
-import validator from "../src/js/validator.js";
+import validator from "../src/validator";
 
 describe("validator", () => {
   it("debería ser un objeto", () => {
