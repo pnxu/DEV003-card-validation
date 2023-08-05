@@ -1,4 +1,4 @@
-import validator from "./validator.js";
+import validator from "./validator";
 import { isAllowedKey } from "./validations.js";
 
 const creditCard = document.getElementById("card-number");
