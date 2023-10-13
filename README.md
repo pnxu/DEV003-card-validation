@@ -33,6 +33,7 @@ This screenshot displays the entered data and demonstrates how the credit card n
 In this screenshot, you can see a success message indicating that a valid credit card number was entered.
 
 ![Screenshot 3](src/assets/Screenshot3.png)
+
 This screenshot showcases an error message indicating that an invalid credit card number was entered.
 
 ### Descripción de scripts / archivos
